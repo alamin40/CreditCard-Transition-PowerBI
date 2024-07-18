@@ -1,33 +1,32 @@
-Credit Card Financial Dashboard
+# Credit Card Financial Dashboard
 
-Project Objective
+## Project Objective
 To develop a comprehensive credit card weekly dashboard that provides real-time insights into key performance metrics and trends, enabling stakeholders to monitor and analyze credit card operations effectively.
 
-Tutorial Video Content
-Project Objective
-Data from SQL
-Data Processing & DAX
-Dashboard & Insights
-Export & Share Project
-Download Data
-The project data can be downloaded from the following links:
+## Tutorial Video Content
+1. Project Objective
+2. Data from SQL
+3. Data Processing & DAX
+4. Dashboard & Insights
+5. Export & Share Project
 
-GitHub: Credit Card Financial Dashboard
-Google Drive: Click Here
-Import Data to SQL Database
+## Download Data
+The project data can be downloaded from this github.
+
+
+## Import Data to SQL Database
 To set up the project, follow these steps:
+1. Prepare the CSV file.
+2. Create tables in SQL.
+3. Import the CSV file into SQL.
 
-Prepare the CSV file.
-Create tables in SQL.
-Import the CSV file into SQL.
 Note: Find all SQL queries & project data in the GitHub repository.
 
-DAX Queries
+## DAX Queries
 The project includes several DAX queries to process and analyze the data:
 
-Age Group
-DAX
-Copy code
+### Age Group
+```DAX
 AgeGroup = SWITCH(
     TRUE(),
     'public cust_detail'[customer_age] < 30, "20-30",
@@ -37,9 +36,7 @@ AgeGroup = SWITCH(
     'public cust_detail'[customer_age] >= 60, "60+",
     "unknown"
 )
-Income Group
-DAX
-Copy code
+
 IncomeGroup = SWITCH(
     TRUE(),
     'public cust_detail'[income] < 35000, "Low",
@@ -47,13 +44,9 @@ IncomeGroup = SWITCH(
     'public cust_detail'[income] >= 70000, "High",
     "unknown"
 )
-Week Number
-DAX
-Copy code
+
 week_num2 = WEEKNUM('public cc_detail'[week_start_date])
-Revenue Calculation
-DAX
-Copy code
+
 Revenue = 'public cc_detail'[annual_fees] + 'public cc_detail'[total_trans_amt] + 'public cc_detail'[interest_earned]
 Current_week_Revenue = CALCULATE(
     SUM('public cc_detail'[Revenue]),
@@ -69,33 +62,29 @@ Previous_week_Revenue = CALCULATE(
         'public cc_detail'[week_num2] = MAX('public cc_detail'[week_num2]) - 1
     )
 )
-Project Insights - Week 53 (31st Dec)
-WoW Change:
 
-Revenue increased by 28.8%
-Total Transaction Amount & Count increased by xx% & xx%
-Customer count increased by xx%
-Overview YTD:
 
-Overall revenue is $57M
-Total interest is $8M
-Total transaction amount is $46M
-Male customers are contributing more to revenue ($31M) compared to female customers ($26M)
-Blue & Silver credit cards are contributing to 93% of overall transactions
-TX, NY & CA are contributing to 68% of the revenue
-Overall Activation rate is 57.5%
-Overall Delinquent rate is 6.06%
-Note: You can add more insights as needed.
+### Overview YTD:
+- Overall revenue is $57M
+- Total interest is $8M
+- Total transaction amount is $46M
+- Male customers are contributing more to revenue ($31M) compared to female customers ($26M)
+- Blue & Silver credit cards are contributing to 93% of overall transactions
+- TX, NY & CA are contributing to 68% of the revenue
+- Overall Activation rate is 57.5%
+- Overall Delinquent rate is 6.06%
 
-Adding to Resume
-Credit Card Financial Dashboard using Power BI:
+*Note: You can add more insights as needed.*
 
-Developed an interactive dashboard using transaction and customer data from a SQL database to provide real-time insights.
-Streamlined data processing & analysis to monitor key performance metrics and trends.
-Shared actionable insights with stakeholders based on dashboard findings to support decision-making processes.
+## Adding to Resume
 
-License
+**Credit Card Financial Dashboard using Power BI:**
+- Developed an interactive dashboard using transaction and customer data from a SQL database to provide real-time insights.
+- Streamlined data processing & analysis to monitor key performance metrics and trends.
+- Shared actionable insights with stakeholders based on dashboard findings to support decision-making processes.
+
+## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-Contact
-For any queries, please contact Rishabh Mishra at alamin23523@gmail.com
+## Contact
+For any queries, please contact MD AL AMIN at alamin23523@gmail.com
