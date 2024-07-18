@@ -62,6 +62,7 @@ Previous_week_Revenue = CALCULATE(
         'public cc_detail'[week_num2] = MAX('public cc_detail'[week_num2]) - 1
     )
 )
+```
 
 
 ### Overview YTD:
